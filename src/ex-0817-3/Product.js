@@ -16,10 +16,13 @@ function Product() {
         <tbody>
           {product.map((v, i) => {
             return (
-              <tr key={v.id}>
-                <td>{v.name}</td>
-                <td>{v.price}</td>
-              </tr>
+              <>
+                <tr key={v.id}>
+                  {/* 亂數 <tr key={Math.random().toString(36).replace('0.')}> */}
+                  <td>{v.name}</td>
+                  <td>{v.price}</td>
+                </tr>
+              </>
             );
           })}
         </tbody>
