@@ -1,4 +1,3 @@
-import { logDOM } from '@testing-library/react';
 import { useState } from 'react';
 
 function Todo() {
