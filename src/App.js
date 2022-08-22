@@ -7,12 +7,14 @@
 // import Todo from './ex-0819-1/Todo';
 // import Parent from './ex-0819-2/Parent';
 // import Parent from './ex-0822-1/Parent';
-import TodoApp from './ex-0822-4/TodoApp';
+// import TodoApp from './ex-0822-4/TodoApp';
+// import OrderApp from './ex-0822-5/OrderApp';
+import Controlled from './ex-0822-6/Controlled';
 //JSX語法
 function App() {
   return (
     <>
-      <TodoApp />
+      <Controlled />
     </>
   );
 }
