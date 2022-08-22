@@ -66,7 +66,7 @@ function Todo() {
     setTodos(newTodos);
   };
 
-  //編輯(還沒看)
+  //編輯
   const editTodo = (id, text) => {
     // 拷貝出目前所有todos狀態
     // 將所有其它的項目editing設為false
