@@ -9,12 +9,15 @@
 // import Parent from './ex-0822-1/Parent';
 // import TodoApp from './ex-0822-4/TodoApp';
 // import OrderApp from './ex-0822-5/OrderApp';
-import Controlled from './ex-0822-6/Controlled';
+// import Controlled from './ex-0822-6/Controlled';
+// import Ex01 from './parctice/Ex01';
+// import Controlled from './ex-0824-1/Controlled';
+import BirthSelect from './ex-0824-2/BirthSelect';
 //JSX語法
 function App() {
   return (
     <>
-      <Controlled />
+      <BirthSelect />
     </>
   );
 }
