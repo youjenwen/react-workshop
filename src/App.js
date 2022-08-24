@@ -13,12 +13,13 @@
 // import Ex01 from './parctice/Ex01';
 // import Controlled from './ex-0824-1/Controlled';
 // import BirthSelect from './ex-0824-2/BirthSelect';
-import BMI from './ex-0824-3/BMI';
+// import BMI from './ex-0824-3/BMI';
+import HTML5Form from './ex-0824-5/HTML5Form';
 //JSX語法
 function App() {
   return (
     <>
-      <BMI />
+      <HTML5Form />
     </>
   );
 }

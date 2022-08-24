@@ -1,0 +1,13 @@
+input:valid{
+    border-radius: lightblue;
+    background-color:azure ;
+}
+
+input:invalid{
+    border-color: rgb(247, 103, 103);
+    background-color: darkgray;
+}
+
+.error{
+    color: rgb(217, 74, 74);
+}
