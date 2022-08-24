@@ -12,12 +12,13 @@
 // import Controlled from './ex-0822-6/Controlled';
 // import Ex01 from './parctice/Ex01';
 // import Controlled from './ex-0824-1/Controlled';
-import BirthSelect from './ex-0824-2/BirthSelect';
+// import BirthSelect from './ex-0824-2/BirthSelect';
+import BMI from './ex-0824-3/BMI';
 //JSX語法
 function App() {
   return (
     <>
-      <BirthSelect />
+      <BMI />
     </>
   );
 }
