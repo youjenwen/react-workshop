@@ -51,6 +51,45 @@ function UserList() {
     }, 2000);
   }, []);
 
+  const paginationBar = (
+    <>
+      <div className="pagination">
+        <a
+          href="#/"
+          onClick={() => {
+            setPageNow(1);
+          }}
+        >
+          &laquo;
+        </a>
+        {Array(pageTotal)
+          .fill(1)
+          .map((v, i) => {
+            return (
+              <a
+                key={i}
+                href="#/"
+                className={i + 1 === pageNow ? 'active' : ''}
+                onClick={() => {
+                  setPageNow(i + 1);
+                }}
+              >
+                {i + 1}
+              </a>
+            );
+          })}
+        <a
+          href="#/"
+          onClick={() => {
+            setPageNow(pageTotal);
+          }}
+        >
+          &raquo;
+        </a>
+      </div>
+    </>
+  );
+
   const loader = (
     <div className="spinner">
       <div className="bounce1"></div>
@@ -59,27 +98,31 @@ function UserList() {
     </div>
   );
   const open = (
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>姓名</th>
-          <th>生日</th>
-        </tr>
-      </thead>
-      <tbody>
-        {usersDisplay.length > 0 &&
-          usersDisplay[pageNow - 1].map((v, i) => {
-            return (
-              <tr key={v.id}>
-                <td>{v.id}</td>
-                <td>{v.name}</td>
-                <td>{v.birth}</td>
-              </tr>
-            );
-          })}
-      </tbody>
-    </table>
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>生日</th>
+          </tr>
+        </thead>
+        <tbody>
+          {usersDisplay.length > 0 &&
+            usersDisplay[pageNow - 1].map((v, i) => {
+              return (
+                <tr key={v.id}>
+                  <td>{v.id}</td>
+                  <td>{v.name}</td>
+                  <td>{v.birth}</td>
+                </tr>
+              );
+            })}
+        </tbody>
+      </table>
+      <br />
+      {paginationBar}
+    </>
   );
 
   return (
