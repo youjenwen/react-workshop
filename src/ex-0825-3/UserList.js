@@ -21,6 +21,8 @@ function UserList() {
     //設定到state中
     setUsers(data);
   };
+
+  //向伺服器要資料
   const fetchUsersBySearchWord = async () => {
     const response = await fetch(
       'https://my-json-server.typicode.com/eyesofkids/json-fake-data/users?name_like=' +
@@ -78,7 +80,7 @@ function UserList() {
 
   return (
     <>
-      <h1>UserList</h1>
+      <h1>UserList(向伺服器要資料)</h1>
       <input
         type="text"
         value={searchWord}
