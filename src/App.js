@@ -14,12 +14,24 @@
 // import Controlled from './ex-0824-1/Controlled';
 // import BirthSelect from './ex-0824-2/BirthSelect';
 // import BMI from './ex-0824-3/BMI';
-import HTML5Form from './ex-0824-5/HTML5Form';
+// import HTML5Form from './ex-0824-5/HTML5Form';
+// import IdFrom from './ex-0825-1/IdForm';
+// import RefsFrom from './ex-0825-1/RefsFrom';
+import { useState } from 'react';
+import FCLifecycle from './ex-0825-2/FCLifecycle';
 //JSX語法
 function App() {
+  const [show, setShow] = useState(true);
   return (
     <>
-      <HTML5Form />
+      {show && <FCLifecycle />}
+      <button
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        {show ? '移除' : '呈現'}
+      </button>
     </>
   );
 }
