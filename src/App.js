@@ -17,21 +17,14 @@
 // import HTML5Form from './ex-0824-5/HTML5Form';
 // import IdFrom from './ex-0825-1/IdForm';
 // import RefsFrom from './ex-0825-1/RefsFrom';
-import { useState } from 'react';
-import FCLifecycle from './ex-0825-2/FCLifecycle';
+// import { useState } from 'react';
+// import FCLifecycle from './ex-0825-2/FCLifecycle';
+import UserList from './ex-0825-3/UserList';
 //JSX語法
 function App() {
-  const [show, setShow] = useState(true);
   return (
     <>
-      {show && <FCLifecycle />}
-      <button
-        onClick={() => {
-          setShow(!show);
-        }}
-      >
-        {show ? '移除' : '呈現'}
-      </button>
+      <UserList />
     </>
   );
 }
