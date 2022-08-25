@@ -12,6 +12,10 @@ function UserList() {
   const [searchWord, setSearchWord] = useState('');
   //代表是否正在載入
   const [isLoading, setIsLoading] = useState(false);
+  //分頁用 初始值1 頁數沒有0
+  const [pageNow, setPageNow] = useState(1); //目前頁號
+  const [perPage, setPerPage] = useState(5); //每頁多少筆資料
+  const [pageTotal, setPageTotal] = useState(0); //一共有幾頁在didMount的時候做
 
   //向伺服器要資料
   //在didMount的時候呼叫這個函式
@@ -22,9 +26,15 @@ function UserList() {
     //剖析資料類型
     const data = await response.json();
     // console.log(data);
+    //拆頁數
+    const pageList = _.chunk(data, perPage);
+    console.log(pageList);
+    if (pageList.length > 0) {
+      setPageTotal(pageList.length);
+    }
 
     //設定到state中
-    setUsersDisplay(data);
+    setUsersDisplay(pageList);
     setUsersRaw(data);
   };
 
@@ -58,15 +68,16 @@ function UserList() {
         </tr>
       </thead>
       <tbody>
-        {usersDisplay.map((v) => {
-          return (
-            <tr key={v.id}>
-              <td>{v.id}</td>
-              <td>{v.name}</td>
-              <td>{v.birth}</td>
-            </tr>
-          );
-        })}
+        {usersDisplay.length > 0 &&
+          usersDisplay[pageNow - 1].map((v, i) => {
+            return (
+              <tr key={v.id}>
+                <td>{v.id}</td>
+                <td>{v.name}</td>
+                <td>{v.birth}</td>
+              </tr>
+            );
+          })}
       </tbody>
     </table>
   );
