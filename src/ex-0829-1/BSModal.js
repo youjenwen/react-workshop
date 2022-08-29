@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import Modal from 'bootstrap/js/dist/modal';
+//前面的fa 是 react-icons/(這裡)
+import { FaCar } from 'react-icons/fa';
 
 function BSModal() {
   const [myModal, setModal] = useState(null);
@@ -9,6 +11,15 @@ function BSModal() {
   }, []);
   return (
     <>
+      <button
+        className="btn btn-primary"
+        onClick={() => {
+          myModal.show();
+        }}
+      >
+        <FaCar color="#ffffff" />
+        SHOW
+      </button>
       <button
         type="button"
         class="btn btn-primary"
